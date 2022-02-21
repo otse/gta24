@@ -1,0 +1,41 @@
+// this is for goldsrc / le game
+
+{
+	"compilerOptions": {
+		"sourceMap": false,
+		"module": "es6",
+		"target": "es6",
+		"jsx": "preserve",
+		"lib": [
+			"dom",
+			"es6"
+		],
+		"outDir": "js/",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": false,
+		"forceConsistentCasingInFileNames": true,
+
+		//"baseUrl": "./goldsrc",
+		//"paths": {
+		//	//"@app/*": [
+			//	"*"
+			//]
+		//}
+	},
+
+	"files": [
+		"goldsrc/KILL.d.ts",
+		//"goldsrc/defs.ts"
+	],
+
+	"include": [
+		"goldsrc",
+		"src2"
+	],
+
+	"exclude": [
+		"node_modules",
+		"**/node_modules/*"
+	]
+}
