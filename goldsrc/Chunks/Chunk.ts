@@ -1,12 +1,11 @@
-import { Group } from "three"
 
-import Data2 from "../Objects/Data"
-import Object2 from "../Objects/Object"
-import Objects from "../Objects/Objects"
+import Data2 from "../Objects/Data.js"
+import Object2 from "../Objects/Object.js"
+import Objects from "../Objects/Objects.js"
 
-import Chunks from "./Chunks"
-import Four from "../Four"
-import Points from "../Objects/Points"
+import Chunks from "./Chunks.js"
+import Four from "../Four.js"
+import Points from "../Objects/Points.js"
 
 // A chunk makes / destroys its datas / objects
 
@@ -19,14 +18,14 @@ export class Chunk {
 	readonly datas: Data2[]
 	readonly objects: Object2[]
 
-	readonly group: THREE.Group
+	readonly group
 
 	readonly w: Point
 
 	constructor(w: Point) {
 		//console.log(`chunk`, Points.string(w));
 
-		this.group = new Group;
+		this.group = new THREE.Group;
 
 		this.w = w;
 		this.datas = [];

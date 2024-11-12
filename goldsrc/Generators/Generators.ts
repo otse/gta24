@@ -1,10 +1,10 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import StagingArea from "./Staging area";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import StagingArea from "./Staging area.js";
 
-import Cars from "../Cars/Cars";
-import Sprites from "../Sprites/Sprites";
-import KILL from "../KILL";
+import Cars from "../Cars/Cars.js";
+import Sprites from "../Sprites/Sprites.js";
+import KILL from "../KILL.js";
 
 const parkedCarNames: string[] = [
 	"Romero", "Wellard", "Aniston BD4", /*"Pacifier",

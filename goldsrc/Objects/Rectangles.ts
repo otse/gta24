@@ -1,7 +1,6 @@
-import Rectangle from "./Rectangle";
+import Rectangle from "./Rectangle.js";
 
-import Four from "../Four";
-import { default as THREE, Clock, Scene } from 'three';
+import Four from "../Four.js";
 
 // "C API" LOL
 export namespace Rectangles {

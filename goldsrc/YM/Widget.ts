@@ -1,10 +1,8 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
 
-import { MeshBasicMaterial, PlaneBufferGeometry, Mesh, Texture, Color } from "three";
-
-import Four from "../Four";
-import Util from "../Random";
+import Four from "../Four.js";
+import Util from "../Random.js";
 
 // we use canvas now tho
 
@@ -17,10 +15,10 @@ export class Widget {
 
 	scale = 1
 
-	mesh: Mesh
-	texture: Texture
-	material: MeshBasicMaterial
-	geometry: PlaneBufferGeometry
+	mesh
+	texture
+	material
+	geometry
 
 	constructor(pos: Widget['pos']) {
 		console.log('ui element');
@@ -40,17 +38,17 @@ export class Widget {
 	}
 
 	make() {
-		this.material = new MeshBasicMaterial({
+		this.material = new THREE.MeshBasicMaterial({
 			map: Util.loadTexture(`sty/a square.png`),
 			transparent: true,
 			depthTest: false
 		});
 
-		this.geometry = new PlaneBufferGeometry(this.pos.w, this.pos.h, 1);
+		this.geometry = new THREE.PlaneBufferGeometry(this.pos.w, this.pos.h, 1);
 
 		const scale = 1;
 
-		this.mesh = new Mesh(this.geometry, this.material);
+		this.mesh = new THREE.Mesh(this.geometry, this.material);
 		this.mesh.renderOrder = 2;
 		this.mesh.scale.set(scale, scale, scale);
 

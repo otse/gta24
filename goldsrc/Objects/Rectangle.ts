@@ -1,14 +1,13 @@
-import Data2 from "../Objects/Data";
-import Object2 from "../Objects/Object";
-import Rectangles from "../Objects/Rectangles";
+import Data2 from "../Objects/Data.js";
+import Object2 from "../Objects/Object.js";
+import Rectangles from "../Objects/Rectangles.js";
 
-import Phong2 from "../Shaders/Phong2";
+import Phong2 from "../Shaders/Phong2.js";
 
-import Util from "../Random";
+import Util from "../Random.js";
 
-import Four from "../Four";
-import { default as THREE, Mesh, Vector3, ShaderMaterial, PlaneBufferGeometry, MeshPhongMaterial, MeshBasicMaterial, NearestFilter, LinearFilter } from 'three';
-import Objects from "./Objects";
+import Four from "../Four.js";
+import Objects from "./Objects.js";
 
 
 interface Info {
@@ -19,11 +18,11 @@ interface Info {
 
 class Rectangle extends Object2 {
 
-	mesh: Mesh
-	meshShadow: Mesh
+	mesh
+	meshShadow
 
-	material: ShaderMaterial | MeshPhongMaterial
-	geometry: PlaneBufferGeometry
+	material
+	geometry
 
 	raise = 2
 
@@ -60,7 +59,7 @@ class Rectangle extends Object2 {
 		//blurMap.magFilter = LinearFilter;
 		let shadowMap = Util.loadTexture(info.blur);
 
-		this.geometry = new PlaneBufferGeometry(
+		this.geometry = new THREE.PlaneGeometry(
 			this.data.width, this.data.height, 1);
 
 		this.material = Phong2.rectangleShader({
@@ -97,7 +96,7 @@ class Rectangle extends Object2 {
 	}
 
 	update_position() {
-		let where = new Vector3(
+		let where = new THREE.Vector3(
 			this.data.x * 64, this.data.y * 64, this.data.z * 64);
 
 		this.mesh.position.copy(where);

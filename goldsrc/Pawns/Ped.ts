@@ -1,13 +1,13 @@
-import Data2 from "../Objects/Data"
-import Rectangle from "../Objects/Rectangle"
+import Data2 from "../Objects/Data.js"
+import Rectangle from "../Objects/Rectangle.js"
 
-import Anims from "../Sprites/Anims"
-import Peds from "./Peds"
-import Util from "../Random"
+import Anims from "../Sprites/Anims.js"
+import Peds from "./Peds.js"
+import Util from "../Random.js"
 
-import { pedDefs } from "./Anim defs"
+import { pedDefs } from "./Anim defs.js"
 
-import KILL from "../KILL"
+import KILL from "../KILL.js"
 
 
 const idleSquare = { x: 1, y: 8 }

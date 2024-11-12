@@ -1,5 +1,5 @@
-import Sheets from "./Sheets";
-import Sheet from "./Sheet";
+import Sheets from "./Sheets.js";
+import Sheet from "./Sheet.js";
 
 namespace Sprites {
 

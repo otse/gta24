@@ -1,9 +1,5 @@
-import Cameraz from "./Cameraz";
-import Four from "../Four";
-
-import { default as THREE, Vector2 } from "three";
-
-const TWO = (THREE as any)
+import Cameraz from "./Cameraz.js";
+import Four from "../Four.js";
 
 export namespace Shift {
 	export var enabled = true;
@@ -72,16 +68,16 @@ export namespace Shift {
 	}
 
 	export function init() {
-		composer = new TWO.EffectComposer(Four.renderer);
-		renderPass = new TWO.RenderPass(Four.scene, Four.camera);
+		composer = new EffectComposer(Four.renderer);
+		renderPass = new RenderPass(Four.scene, Four.camera);
 
 		composer.addPass(renderPass);
 
-		effect = new TWO.ShaderPass(retroShader);
+		effect = new ShaderPass(retroShader);
 
 		effect.uniforms['redblue'].value = 0.0015 * 0.5;
 		effect.uniforms["resolution"].value =
-			new Vector2(window.innerWidth, window.innerHeight);
+			new THREE.Vector2(window.innerWidth, window.innerHeight);
 		effect.uniforms["resolution"].value.multiplyScalar(
 			window.devicePixelRatio);
 		effect.renderToScreen = true;

@@ -1,16 +1,16 @@
-import Data2 from "../../Objects/Data";
-import Datas from "../../Objects/Datas";
-import { MeshPhongMaterial, PlaneBufferGeometry, Mesh, Texture, Color } from "three";
-import Util from "../../Random";
-import Sheets from "../../Sprites/Sheets";
-import Four from "../../Four";
-import { Fonts } from "../Fonts";
-import Widget from "../Widget";
+import Data2 from "../../Objects/Data.js";
+import Datas from "../../Objects/Datas.js";
+
+import Util from "../../Random.js";
+import Sheets from "../../Sprites/Sheets.js";
+import Four from "../../Four.js";
+import { Fonts } from "../Fonts.js";
+import Widget from "../Widget.js";
 
 export class WordBox {
 	widget: Widget
 
-	texture: Texture
+	texture
 
 	constructor() {
 		this.make();

@@ -1,5 +1,4 @@
-import Four from "../Four";
-import { default as THREE, Vector3, MeshPhongMaterial, MeshPhongMaterialParameters, Shader } from 'three';
+import Four from "../Four.js";
 
 namespace Phong2 {
 
@@ -11,13 +10,13 @@ namespace Phong2 {
 
 	}
 
-	export function carDeltaShader(phongProperties: MeshPhongMaterialParameters, p: any) {
+	export function carDeltaShader(phongProperties, p: any) {
 
-		let material = new MeshPhongMaterial(phongProperties);
+		let material = new THREE.MeshPhongMaterial(phongProperties);
 
-		material.onBeforeCompile = function(shader: Shader) {
+		material.onBeforeCompile = function(shader) {
 
-			shader.uniforms.pink = { value: new Vector3(1, 0, 1) };
+			shader.uniforms.pink = { value: new THREE.Vector3(1, 0, 1) };
 
 			shader.fragmentShader = shader.fragmentShader.replace(
 				`#define PHONG`,
@@ -46,7 +45,7 @@ namespace Phong2 {
 
 					texelColor = mapColor;
 
-					texelColor = mapTexelToLinear( texelColor );
+					// texelColor = mapTexelToLinear( texelColor );
 
 					diffuseColor *= texelColor;
 
@@ -58,15 +57,15 @@ namespace Phong2 {
 		return material;
 	}
 
-	export function rectangleShader(phongProperties: MeshPhongMaterialParameters, p: any) {
+	export function rectangleShader(phongProperties, p: any) {
 
-		let customMaterial = new MeshPhongMaterial(phongProperties);
+		let customMaterial = new THREE.MeshPhongMaterial(phongProperties);
 
-		customMaterial.onBeforeCompile = function(shader: Shader) {
+		customMaterial.onBeforeCompile = function(shader) {
 			
 			shader.uniforms.blurMap = { value: p.blurMap };
 
-			shader.uniforms.pink = { value: new Vector3(1, 0, 1) };
+			shader.uniforms.pink = { value: new THREE.Vector3(1, 0, 1) };
 
 			shader.fragmentShader = shader.fragmentShader.replace(
 				`#define PHONG`,
@@ -102,7 +101,7 @@ namespace Phong2 {
 					//texelColor = blurColor + mapColor;
 					texelColor = mapColor;
 
-					texelColor = mapTexelToLinear( texelColor );
+					// texelColor = mapTexelToLinear( texelColor );
 
 					diffuseColor *= texelColor;
 
@@ -114,13 +113,13 @@ namespace Phong2 {
 		return customMaterial;
 	}
 
-	export function rectangleShadowShader(phongProperties: MeshPhongMaterialParameters, p: any) {
+	export function rectangleShadowShader(phongProperties, p: any) {
 
-		let customMaterial = new MeshPhongMaterial(phongProperties);
+		let customMaterial = new THREE.MeshPhongMaterial(phongProperties);
 
-		customMaterial.onBeforeCompile = (shader: Shader) => {
+		customMaterial.onBeforeCompile = (shader) => {
 			
-			shader.uniforms.pink = { value: new Vector3(1, 0, 1) };
+			shader.uniforms.pink = { value: new THREE.Vector3(1, 0, 1) };
 
 			shader.fragmentShader = shader.fragmentShader.replace(
 				`#define PHONG`,
@@ -149,7 +148,7 @@ namespace Phong2 {
 
 					texelColor = mapColor;
 
-					texelColor = mapTexelToLinear( texelColor );
+					// texelColor = mapTexelToLinear( texelColor );
 
 					diffuseColor *= texelColor;
 

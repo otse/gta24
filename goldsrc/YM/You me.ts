@@ -1,7 +1,6 @@
-import { default as THREE, OrthographicCamera, CanvasTexture, NearestFilter, Font } from "three";
-import Four from "../Four";
-import { Shift } from "../Unsorted/Shift";
-import Fonts from "./Fonts";
+import Four from "../Four.js";
+import { Shift } from "../Unsorted/Shift.js";
+import Fonts from "./Fonts.js";
 
 export class Thing {
 	constructor() {
@@ -13,7 +12,7 @@ export namespace YM {
 
 	export let canvas;
 	export let context;
-	export let canvasTexture: CanvasTexture;
+	export let canvasTexture;
 
 	export function init() {
 
@@ -25,10 +24,10 @@ export namespace YM {
 
 		context = canvas.getContext("2d");
 
-		canvasTexture = new CanvasTexture(canvas);
+		canvasTexture = new THREE.CanvasTexture(canvas);
 
-		canvasTexture.magFilter = NearestFilter;
-		canvasTexture.minFilter = NearestFilter;
+		canvasTexture.magFilter = THREE.NearestFilter;
+		canvasTexture.minFilter = THREE.NearestFilter;
 
 		//Shift.effect.uniforms['tUI'].value = canvasTexture;
 

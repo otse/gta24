@@ -1,21 +1,20 @@
-import Rectangle from "../Objects/Rectangle";
-import Data2 from "../Objects/Data";
+import Rectangle from "../Objects/Rectangle.js";
+import Data2 from "../Objects/Data.js";
 
-import APhysic from "./Every line is a physic";
-import Cars from "./Cars";
+import APhysic from "./Every line is a physic.js";
+import Cars from "./Cars.js";
 
-import KILL from "../KILL";
+import KILL from "../KILL.js";
 
-import { Mesh, MeshBasicMaterial, Material } from "three";
-import Util from "../Random";
-import Sheet from "../Sprites/Sheet";
-import Phong2 from "../Shaders/Phong2";
-import Objects from "../Objects/Objects";
-import Datas from "../Objects/Datas";
+import Util from "../Random.js";
+import Sheet from "../Sprites/Sheet.js";
+import Phong2 from "../Shaders/Phong2.js";
+import Objects from "../Objects/Objects.js";
+import Datas from "../Objects/Datas.js";
 
 interface DeltaMesh {
 	sprite: Square
-	mesh: Mesh
+	mesh
 }
 
 export class Car extends Rectangle {
@@ -99,7 +98,7 @@ export class Car extends Rectangle {
 			transparent: true,
 			map: Util.loadTexture(this.deltaSty)
 		}, {});
-		mesh = new Mesh(this.geometry.clone(), material);
+		mesh = new THREE.Mesh(this.geometry.clone(), material);
 		mesh.position.set(0, 0, OFFSET);
 		this.mesh.add(mesh);
 		Util.UV.fromSheet(mesh.geometry, square, this.sheet);

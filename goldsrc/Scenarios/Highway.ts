@@ -1,14 +1,14 @@
-import Scenario from "./Scenario";
-import Generators from "../Generators/Generators";
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import { Scenarios } from "./Scenarios";
-import WordBox from "../YM/Cutscene/Word box";
-import TalkingHead from "../YM/Cutscene/Talking Heads";
-import KILL from "../KILL";
-import Cars from "../Cars/Cars";
-import Points from "../Objects/Points";
-import APhysic from "../Cars/Every line is a physic";
+import Scenario from "./Scenario.js";
+import Generators from "../Generators/Generators.js";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import { Scenarios } from "./Scenarios.js";
+import WordBox from "../YM/Cutscene/Word box.js";
+import TalkingHead from "../YM/Cutscene/Talking Heads.js";
+import KILL from "../KILL.js";
+import Cars from "../Cars/Cars.js";
+import Points from "../Objects/Points.js";
+import APhysic from "../Cars/Every line is a physic.js";
 
 export namespace HighWayWithEveryCar {
 

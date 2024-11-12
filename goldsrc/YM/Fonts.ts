@@ -1,10 +1,8 @@
-import { default as THREE, LinearFilter, NearestFilter, Texture, TextureLoader, ImageLoader, CanvasTexture, LoadingManager } from "three";
-
-import Four from "../Four";
-import Util from "../Random";
-import Points from "../Objects/Points";
-import KILL from "../KILL";
-import FontsSpelling from "./Fonts spelling";
+import Four from "../Four.js";
+import Util from "../Random.js";
+import Points from "../Objects/Points.js";
+import KILL from "../KILL.js";
+import FontsSpelling from "./Fonts spelling.js";
 
 export namespace Fonts {
 
@@ -28,7 +26,7 @@ export namespace Fonts {
 
 		const get_font = (name, rs, func) => {
 
-			new ImageLoader().load(`sty/fonts/${name}.png`,
+			new THREE.ImageLoader().load(`sty/fonts/${name}.png`,
 				(img) => {
 					func(img);
 					KILL.resourced(rs);
@@ -58,17 +56,17 @@ export namespace Fonts {
 		}
 	}
 
-	export function textTexture(text: string, width: number, height: number): Texture {
+	export function textTexture(text: string, width: number, height: number) {
 
 		canvas.width = width;
 		canvas.height = height;
 		
 		let symbols = FontsSpelling.symbolize(canvas, text, 'small');
 
-		let texture = new CanvasTexture(canvas);
+		let texture = new THREE.CanvasTexture(canvas);
 
-		texture.magFilter = NearestFilter;
-		texture.minFilter = NearestFilter;
+		texture.magFilter = THREE.NearestFilter;
+		texture.minFilter = THREE.NearestFilter;
 
 		const context = canvas.getContext("2d");
 

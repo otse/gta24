@@ -1,11 +1,11 @@
-import Data2 from "../Objects/Data";
+import Data2 from "../Objects/Data.js";
 
-import Generators from "./Generators";
-import Sprites from "../Sprites/Sprites";
-import GenTools from "./Tools";
-import Datas from "../Objects/Datas";
-import Cars from "../Cars/Cars";
-import { Shift } from "../Unsorted/Shift";
+import Generators from "./Generators.js";
+import Sprites from "../Sprites/Sprites.js";
+import GenTools from "./Tools.js";
+import Datas from "../Objects/Datas.js";
+import Cars from "../Cars/Cars.js";
+import { Shift } from "../Unsorted/Shift.js";
 
 export namespace Levels {
 

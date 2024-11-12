@@ -1,11 +1,10 @@
-import Data2 from "../../Objects/Data";
-import Datas from "../../Objects/Datas";
-import { MeshPhongMaterial, PlaneBufferGeometry, Mesh, Texture, Color, Camera, ArrowHelper } from "three";
-import Util from "../../Random";
-import Sheets from "../../Sprites/Sheets";
-import Four from "../../Four";
-import Widget from "../Widget";
-import App from "../../App";
+import Data2 from "../../Objects/Data.js";
+import Datas from "../../Objects/Datas.js";
+import Util from "../../Random.js";
+import Sheets from "../../Sprites/Sheets.js";
+import Four from "../../Four.js";
+import Widget from "../Widget.js";
+import App from "../../App.js";
 
 // Apparently a band
 
@@ -20,7 +19,7 @@ export class TalkingHead {
 	blinkDelay = 2
 	openEyesDelay = 0.1
 	img = 0
-	imgs: Texture[] = []
+	imgs: any[] = []
 
 	talk = false
 
@@ -118,13 +117,13 @@ export class TalkingHead {
 
 		const s = 10;
 
-		if (App.map[39]) // right
+		if (App.get_key(['arrowright'])) // right
 			this.widget.pos.x += s;
-		if (App.map[37]) // left
+		if (App.get_key(['arrowleft'])) // left
 			this.widget.pos.x -= s;
-		if (App.map[38]) // up
+		if (App.get_key(['arrowup'])) // up
 			this.widget.pos.y += s;
-		if (App.map[40]) // down
+		if (App.get_key(['arrowdown'])) // down
 			this.widget.pos.y -= s;
 
 		//console.log(this.widget.pos);

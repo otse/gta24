@@ -1,13 +1,13 @@
-import Data2 from "./Data";
-import Object2 from "./Object";
+import Data2 from "./Data.js";
+import Object2 from "./Object.js";
 
-import Block from "./Shapes/Block";
-import Surface from "./Shapes/Surface";
-import Wall from "./Shapes/Wall";
-import Car from "../Cars/Car";
-import Datas from "./Datas";
-import Ply from "../Pawns/Ply";
-import Points from "./Points";
+import Block from "./Shapes/Block.js";
+import Surface from "./Shapes/Surface.js";
+import Wall from "./Shapes/Wall.js";
+import Car from "../Cars/Car.js";
+import Datas from "./Datas.js";
+import Ply from "../Pawns/Ply.js";
+import Points from "./Points.js";
 
 export namespace Objects {
 	function factory(data: Data2): Object2 | null {

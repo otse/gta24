@@ -1,7 +1,7 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
 
-import Generators from "./Generators";
+import Generators from "./Generators.js";
 
 // For making vertical ~> horizontal
 

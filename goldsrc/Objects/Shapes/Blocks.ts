@@ -1,18 +1,16 @@
-import Data2 from "../Data";
+import Data2 from "../Data.js";
 
-import Block from "./Block";
-import BoxCutter from "./Box cutter";
+import Block from "./Block.js";
+import BoxCutter from "./Box cutter.js";
 
-import { BoxBufferGeometry } from "three";
-
-import Four from "../../Four";
-import Util from "../../Random";
+import Four from "../../Four.js";
+import Util from "../../Random.js";
 
 export namespace Blocks {
-	export var geometry: BoxBufferGeometry
+	export var geometry
 
 	export function init() {
-		geometry = new BoxBufferGeometry(64, 64, 64);
+		geometry = new THREE.BoxGeometry(64, 64, 64);
 
 		Util.UV.rotatePlane(geometry, 0, 3);
 		Util.UV.rotatePlane(geometry, 1, 1);

@@ -1,10 +1,10 @@
-import Data2 from "./Data";
-import Points from "./Points";
+import Data2 from "./Data.js";
+import Points from "./Points.js";
 
-import Chunk from "../Chunks/Chunk";
-import Chunks from "../Chunks/Chunks";
+import Chunk from "../Chunks/Chunk.js";
+import Chunks from "../Chunks/Chunks.js";
 
-import KILL from "../KILL";
+import KILL from "../KILL.js";
 
 // aka data maker
 

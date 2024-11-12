@@ -1,10 +1,10 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import Points from "../Objects/Points";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import Points from "../Objects/Points.js";
 
-import StagingArea from "./Staging area";
-import Chunk from "../Chunks/Chunk";
-import Sprites from "../Sprites/Sprites";
+import StagingArea from "./Staging area.js";
+import Chunk from "../Chunks/Chunk.js";
+import Sprites from "../Sprites/Sprites.js";
 
 export namespace GenTools {
 

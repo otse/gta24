@@ -1,13 +1,11 @@
-import Ped from "./Ped";
+import Ped from "./Ped.js";
 
-import Util from "../Random";
+import Util from "../Random.js";
 
-import { ShaderMaterial, MeshBasicMaterial } from "three";
+import Anims from "../Sprites/Anims.js";
+import Sheet from "../Sprites/Sheet.js";
 
-import Anims from "../Sprites/Anims";
-import Sheet from "../Sprites/Sheet";
-
-//import { three } from "../three";
+//import { three } from "../three.js";
 
 export namespace Peds {
 
@@ -24,8 +22,8 @@ export namespace Peds {
 		return timer;
     }
     
-    export var material: ShaderMaterial;
-    export var materialShadow: MeshBasicMaterial;
+    export var material;
+    export var materialShadow;
 
     export const sheet: Sheet = {
 

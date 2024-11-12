@@ -1,24 +1,22 @@
-import Data2 from "../Data";
-import Object2 from "../Object";
+import Data2 from "../Data.js";
+import Object2 from "../Object.js";
 
-import Surfaces from "../Shapes/Surfaces";
-import Sprites from "../../Sprites/Sprites";
-import Sheets from "../../Sprites/Sheets";
+import Surfaces from "../Shapes/Surfaces.js";
+import Sprites from "../../Sprites/Sprites.js";
+import Sheets from "../../Sprites/Sheets.js";
 
-import Util from "../../Random";
-
-import { default as THREE, Mesh, Material, PlaneBufferGeometry, MeshPhongMaterial, Color, DoubleSide, Texture, Shader } from "three";
-import Points from "../Points";
-import Four from "../../Four";
-import Water from "../../Unsorted/Water";
+import Util from "../../Random.js";
+import Points from "../Points.js";
+import Four from "../../Four.js";
+import Water from "../../Unsorted/Water.js";
 
 const defaultSty = 'sty/commercial/storefront/577.bmp';
 
 export class Surface extends Object2 {
 
-	mesh: Mesh
-	material: Material
-	geometry: PlaneBufferGeometry
+	mesh
+	material
+	geometry
 
 	constructor(data: Data2) {
 		super(data);
@@ -54,7 +52,7 @@ export class Surface extends Object2 {
 		// Cut to prevent texture bleeding
 		const cut = true;
 
-		let map: Texture | null;
+		let map;
 
 		//let halfPixel = 0;
 
@@ -76,10 +74,10 @@ export class Surface extends Object2 {
 
 		//this.data.color = '#888888';
 
-		this.material = new MeshPhongMaterial({
+		this.material = new THREE.MeshPhongMaterial({
 			map: map,
 			shininess: 0,
-			color: new Color(this.data.color),
+			color: new THREE.Color(this.data.color),
 			//side: DoubleSide
 		});
 
@@ -91,7 +89,7 @@ export class Surface extends Object2 {
 
 		//map.offset.set(.01, .01);
 
-		this.mesh = new Mesh(this.geometry, material);
+		this.mesh = new THREE.Mesh(this.geometry, material);
 		this.mesh.matrixAutoUpdate = false;
 		this.mesh.frustumCulled = false;
 		this.mesh.castShadow = false;

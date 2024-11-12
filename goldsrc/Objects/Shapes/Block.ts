@@ -1,11 +1,9 @@
-import Data2 from '../Data';
-import Object2 from '../Object';
+import Data2 from '../Data.js';
+import Object2 from '../Object.js';
 
-import Blocks from './Blocks';
+import Blocks from './Blocks.js';
 
-import { default as THREE, Clock, Scene, MeshPhongMaterial, Color, Mesh } from 'three';
-
-import Util from '../../Random';
+import Util from '../../Random.js';
 
 
 export let FACEWORDS = ['right', 'left', 'front', 'back', 'top', 'bottom'];
@@ -15,9 +13,9 @@ const defaultSty = 'sty/commercial/storefront/577.bmp';
 
 export class Block extends Object2 {
 
-	mesh: THREE.Mesh
-	geometry: THREE.BoxBufferGeometry
-	materials: THREE.Material[]
+	mesh
+	geometry
+	materials
 
 	constructor(data: Data2) {
 		super(data);
@@ -65,9 +63,9 @@ export class Block extends Object2 {
 
 			faceCount++;
 
-			let mat = new MeshPhongMaterial({
+			let mat = new THREE.MeshPhongMaterial({
 				map: Util.loadTexture(sty),
-				color: new Color(this.data.color)
+				color: new THREE.Color(this.data.color)
 			});
 
 			this.materials[i] = mat;
@@ -84,7 +82,7 @@ export class Block extends Object2 {
 
 		}
 
-		this.mesh = new Mesh(
+		this.mesh = new THREE.Mesh(
 			this.geometry,
 			this.materials);
 		this.mesh.matrixAutoUpdate = false;

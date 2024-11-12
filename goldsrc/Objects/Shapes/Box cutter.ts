@@ -1,6 +1,4 @@
-import Blocks from "./Blocks";
-
-import { BoxBufferGeometry } from "three";
+import Blocks from "./Blocks.js";
 
 export namespace BoxCutter {
 
@@ -15,7 +13,7 @@ export namespace BoxCutter {
 		"OO|||", "|O|||", "O||||", "|||||"
 	];
 
-	export let geometries: BoxBufferGeometry[] = [];
+	export let geometries: any[] = [];
 
 	// Remove faces from a Box Buffer Geometry
 	export function init() {
@@ -56,9 +54,9 @@ export namespace BoxCutter {
 					group.start -= 6;
 				}
 
-				(attribs.position.array as any) = new Float32Array(position);
-				(attribs.uv.array as any) = new Float32Array(uv);
-				(attribs.normal.array as any) = new Float32Array(normal);
+				(attribs.position.array as any) = new Float32Array(position as unknown as ArrayBuffer);
+				(attribs.uv.array as any) = new Float32Array(uv as unknown as ArrayBuffer);
+				(attribs.normal.array as any) = new Float32Array(normal as unknown as ArrayBuffer);
 			}
 
 		}

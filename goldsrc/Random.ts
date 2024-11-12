@@ -1,12 +1,10 @@
-import Sheet from './Sprites/Sheet';
-
-import { default as THREE, Texture, TextureLoader, NearestFilter, LinearFilter, Geometry, BufferGeometry } from 'three';
+import Sheet from './Sprites/Sheet.js';
 
 export namespace Util {
 
-	let mem: Texture[] = [];
+	let mem: any[] = [];
 
-	export function loadTexture(path: string | undefined, salt = ''): Texture | null {
+	export function loadTexture(path: string | undefined, salt = '') {
 
 		let pepper = path + salt;
 
@@ -15,13 +13,13 @@ export namespace Util {
 		if (texture)
 			return texture;
 
-		texture = new TextureLoader().load(path);
+		texture = new THREE.TextureLoader().load(path);
 		texture.name = pepper;
 
 		texture.generateMipmaps = false;
 
-		texture.magFilter = NearestFilter;
-		texture.minFilter = NearestFilter;
+		texture.magFilter = THREE.NearestFilter;
+		texture.minFilter = THREE.NearestFilter;
 
 		mem[pepper] = texture;
 

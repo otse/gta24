@@ -1,6 +1,6 @@
-import Data2 from "./Data";
-import Chunk from "../Chunks/Chunk";
-import Datas from "./Datas";
+import Data2 from "./Data.js";
+import Chunk from "../Chunks/Chunk.js";
+import Datas from "./Datas.js";
 
 // in 22 this separation was called the whatsit-thing;
 // for 2.3 its renamed object-data

@@ -1,36 +1,34 @@
-import Chunk from "./Chunk";
-import City from "./City";
+import Chunk from "./Chunk.js";
+import City from "./City.js";
 
-import Points from "../Objects/Points";
-
-import { Mesh, BoxGeometry, MeshBasicMaterial } from "three";
+import Points from "../Objects/Points.js";
 
 export namespace Chunks {
 
 	export const tileSpan = 7
 	export const actualSize = tileSpan * 64
 
-	let geometry: THREE.BoxGeometry
-	let blue: THREE.MeshBasicMaterial
-	let purple: THREE.MeshBasicMaterial
+	let geometry
+	let blue
+	let purple
 
 	const N = 64 * tileSpan
 
 	export function init() {
 
-		geometry = new BoxGeometry(N, N, 0);
+		geometry = new THREE.BoxGeometry(N, N, 0);
 
-		blue = new MeshBasicMaterial(
+		blue = new THREE.MeshBasicMaterial(
 			{ wireframe: true, color: 'blue' });
 
-		purple = new MeshBasicMaterial(
+		purple = new THREE.MeshBasicMaterial(
 			{ wireframe: true, color: 'purple' });
 	}
 
 	export function scaffold(chunk: Chunk) {
 		let nany = chunk as any;
 
-		nany.wireframe = new Mesh(geometry, purple);
+		nany.wireframe = new THREE.Mesh(geometry, purple);
 
 		nany.wireframe.position.set(
 			((chunk.w.x + 1) * N) - N / 2, ((chunk.w.y + 1) * N) - N / 2, 0);

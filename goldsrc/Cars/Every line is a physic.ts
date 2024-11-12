@@ -1,7 +1,7 @@
 
 // joke taken from the gta wikia when it described nyc.gci
 
-import Cars from "./Cars";
+import Cars from "./Cars.js";
 
 namespace APhysic {
 

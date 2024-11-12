@@ -1,18 +1,17 @@
-import { default as THREE, Texture, MeshPhongMaterial, PlaneBufferGeometry, Mesh, MeshBasicMaterial, RepeatWrapping } from "three";
-import Four from "../Four";
-import Util from "../Random";
-import Chunk from "../Chunks/Chunk";
-import Chunks from "../Chunks/Chunks";
-import Points from "../Objects/Points";
+import Four from "../Four.js";
+import Util from "../Random.js";
+import Chunk from "../Chunks/Chunk.js";
+import Chunks from "../Chunks/Chunks.js";
+import Points from "../Objects/Points.js";
 
 // http://kitfox.com/projects/perlinNoiseMaker/
 namespace Mist {
 
 	let enabled = false
 
-	let material: MeshPhongMaterial
-	let geometry: PlaneBufferGeometry
-	let mesh: Mesh
+	let material
+	let geometry
+	let mesh
 
 	const HALF_FPS = true
 	let alt = false
@@ -29,14 +28,14 @@ namespace Mist {
 		y = 0;
 		const w = 5;
 
-		geometry = new PlaneBufferGeometry(Chunks.tileSpan * 64 * w, Chunks.tileSpan * 64 * w, 1, 1);
+		geometry = new THREE.PlaneBufferGeometry(Chunks.tileSpan * 64 * w, Chunks.tileSpan * 64 * w, 1, 1);
 
 		let perlin = Util.loadTexture('sty/perlin_1.png')
-		perlin.wrapS = RepeatWrapping;
-		perlin.wrapT = RepeatWrapping;
+		perlin.wrapS = THREE.RepeatWrapping;
+		perlin.wrapT = THREE.RepeatWrapping;
 		perlin.repeat.set(w, w);
 
-		material = new MeshPhongMaterial({
+		material = new THREE.MeshPhongMaterial({
 			map: perlin,
 			color: 0x777777,
 			opacity: 0.15,
@@ -44,7 +43,7 @@ namespace Mist {
 			depthWrite: false
 		});
 
-		mesh = new Mesh(geometry, material);
+		mesh = new THREE.Mesh(geometry, material);
 
 		Four.scene.add(mesh);
 	}

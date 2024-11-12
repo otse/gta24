@@ -1,9 +1,9 @@
-import Chunk from "./Chunk"
-import Chunks from "./Chunks"
-import ChunkList from "./Chunk list"
+import Chunk from "./Chunk.js"
+import Chunks from "./Chunks.js"
+import ChunkList from "./Chunk list.js"
 
-import Datas from "../Objects/Datas"
-import Points from "../Objects/Points"
+import Datas from "../Objects/Datas.js"
+import Points from "../Objects/Points.js"
 
 
 export class City {

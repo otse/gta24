@@ -1,4 +1,4 @@
-import Anims from "../Sprites/Anims";
+import Anims from "../Sprites/Anims.js";
 
 const walkSquares = [
 	{ x: 1, y: 1 },

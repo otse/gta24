@@ -1,15 +1,13 @@
-import Surface from "./Surface";
+import Surface from "./Surface.js";
 
-import Four from "../../Four";
-
-import { default as THREE, Clock, Scene, Mesh, Vector3, ShaderMaterial, PlaneBufferGeometry, MeshPhongMaterial } from 'three';
+import Four from "../../Four.js";
 
 
 export namespace Surfaces {
-	export var geometry: THREE.PlaneBufferGeometry
+	export var geometry
 
 	export function init() {
-		this.geometry = new THREE.PlaneBufferGeometry(64, 64, 1, 1);
+		this.geometry = new THREE.PlaneGeometry(64, 64, 1, 1);
 	}
 
 	export function show(plane: Surface) {

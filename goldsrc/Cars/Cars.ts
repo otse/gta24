@@ -1,7 +1,7 @@
-import Car from "./Car";
-import KILL from "../KILL";
-import Sheet from "../Sprites/Sheet";
-import APhysic from "./Every line is a physic";
+import Car from "./Car.js";
+import KILL from "../KILL.js";
+import Sheet from "../Sprites/Sheet.js";
+import APhysic from "./Every line is a physic.js";
 
 namespace Cars {
 
@@ -48,7 +48,7 @@ namespace Cars {
 	}
 
 	export function getSpray(id: number): string {
-		return Sprays[name]
+		return Sprays['name']
 	}
 
 	/// functions

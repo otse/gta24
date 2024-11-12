@@ -1,11 +1,11 @@
-import Scenario from "./Scenario";
-import Generators from "../Generators/Generators";
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import { Scenarios } from "./Scenarios";
-import TalkingHead from "../YM/Cutscene/Talking Heads";
-import WordBox from "../YM/Cutscene/Word box";
-import Widget from "../YM/Widget";
+import Scenario from "./Scenario.js";
+import Generators from "../Generators/Generators.js";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import { Scenarios } from "./Scenarios.js";
+import TalkingHead from "../YM/Cutscene/Talking Heads.js";
+import WordBox from "../YM/Cutscene/Word box.js";
+import Widget from "../YM/Widget.js";
 
 export namespace BridgeScenario {
 

@@ -1,11 +1,9 @@
-import { default as THREE, Clock, Scene, WebGLRenderer, PerspectiveCamera, DirectionalLight, AmbientLight, BoxBufferGeometry, MeshPhongMaterial, Texture } from 'three';
 
-import KILL from './KILL';
-import Points from './Objects/Points';
-import { Shift } from './Unsorted/Shift';
-import App from './App';
-import Util from './Random';
-import YM from './YM/You me';
+import KILL from './KILL.js';
+import Points from './Objects/Points.js';
+import { Shift } from './Unsorted/Shift.js';
+import Util from './Random.js';
+import YM from './YM/You me.js';
 
 //export { THREE };
 
@@ -15,13 +13,13 @@ export namespace Four {
 	export var aspect = 0;
 
 	// todo, redo
-	export var boxBufferGeometry: BoxBufferGeometry
-	export var clock: Clock
-	export var scene: Scene
-	export var camera: PerspectiveCamera
-	export var renderer: WebGLRenderer
-	export var ambientLight: AmbientLight
-	export var directionalLight: DirectionalLight
+	export var boxBufferGeometry
+	export var clock
+	export var scene
+	export var camera
+	export var renderer
+	export var ambientLight
+	export var directionalLight
 
 	export function update() {
 
@@ -30,8 +28,9 @@ export namespace Four {
 
 		KILL.update();
 
-		if (App.map[115] == 1)
-			Shift.enabled = !Shift.enabled;
+		// ??
+		// if (App.map[115] == 1)
+		// 	Shift.enabled = !Shift.enabled;
 
 		if (Shift.enabled) {
 
@@ -49,25 +48,25 @@ export namespace Four {
 
 		console.log('four init');
 
-		clock = new Clock();
+		clock = new THREE.Clock();
 
-		camera = new PerspectiveCamera(
+		camera = new THREE.PerspectiveCamera(
 			70, window.innerWidth / window.innerHeight, 1, 3000);
 		aspect = camera.aspect;
 		camera.position.z = 200;
 
-		scene = new Scene();
+		scene = new THREE.Scene();
 
-		directionalLight = new DirectionalLight(0x355886, 1.0);
+		directionalLight = new THREE.DirectionalLight(0x355886, 1.0);
 		directionalLight.position.set(0, 0, 1);
-		ambientLight = new AmbientLight('#ffffff'); // #5187cd
+		ambientLight = new THREE.AmbientLight('#ffffff'); // #5187cd
 		//ambientLight = new AmbientLight('#5187cd'); // #5187cd
 
 		//scene.add(directionalLight);
 		scene.add(directionalLight.target);
 		scene.add(ambientLight);
 
-		renderer = new WebGLRenderer({ antialias: true });
+		renderer = new THREE.WebGLRenderer({ antialias: true });
 		renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.setSize(
 			window.innerWidth, window.innerHeight);

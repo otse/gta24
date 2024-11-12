@@ -1,30 +1,30 @@
-import Data2 from "./Objects/Data";
-import City from "./Chunks/City";
-import Ply from "./Pawns/Ply";
+import Data2 from "./Objects/Data.js";
+import City from "./Chunks/City.js";
+import Ply from "./Pawns/Ply.js";
 
-import Phong2 from "./Shaders/Phong2";
-import Rectangles from "./Objects/Rectangles";
-import Surfaces from "./Objects/Shapes/Surfaces";
-import Blocks from "./Objects/Shapes/Blocks";
-import BoxCutter from "./Objects/Shapes/Box cutter";
-import Sprites from "./Sprites/Sprites";
-import Sheets from "./Sprites/Sheets";
+import Phong2 from "./Shaders/Phong2.js";
+import Rectangles from "./Objects/Rectangles.js";
+import Surfaces from "./Objects/Shapes/Surfaces.js";
+import Blocks from "./Objects/Shapes/Blocks.js";
+import BoxCutter from "./Objects/Shapes/Box cutter.js";
+import Sprites from "./Sprites/Sprites.js";
+import Sheets from "./Sprites/Sheets.js";
 
-import Levels from "./Generators/Levels";
+import Levels from "./Generators/Levels.js";
 
-import Cameraz from "./Unsorted/Cameraz";
-import { Shift } from "./Unsorted/Shift";
-import PalmTrees from "./Scenarios/Palm trees";
-import HighWayWithEveryCar from "./Scenarios/Highway";
-import BridgeScenario from "./Scenarios/Bridge";
-import Scenarios from "./Scenarios/Scenarios";
-import Fonts from "./YM/Fonts";
-import Water from "./Unsorted/Water";
-import Mist from "./Unsorted/Mist";
-import Cars from "./Cars/Cars";
-import YM from "./YM/You me";
-import Datas from "./Objects/Datas";
-import Chunks from "./Chunks/Chunks";
+import Cameraz from "./Unsorted/Cameraz.js";
+import { Shift } from "./Unsorted/Shift.js";
+import PalmTrees from "./Scenarios/Palm trees.js";
+import HighWayWithEveryCar from "./Scenarios/Highway.js";
+import BridgeScenario from "./Scenarios/Bridge.js";
+import Scenarios from "./Scenarios/Scenarios.js";
+import Fonts from "./YM/Fonts.js";
+import Water from "./Unsorted/Water.js";
+import Mist from "./Unsorted/Mist.js";
+import Cars from "./Cars/Cars.js";
+import YM from "./YM/You me.js";
+import Datas from "./Objects/Datas.js";
+import Chunks from "./Chunks/Chunks.js";
 
 export namespace KILL {
 

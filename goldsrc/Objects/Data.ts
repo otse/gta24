@@ -1,4 +1,4 @@
-import { Object2 } from './Object';
+import { Object2 } from './Object.js';
 
 // todo, obviously simplify this someday
 

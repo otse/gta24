@@ -1,5 +1,4 @@
-import Four from "../Four";
-import { default as THREE, Vector3, MeshPhongMaterial, MeshPhongMaterialParameters, Shader, Geometry } from 'three';
+import Four from "../Four.js";
 
 // attempt at a shader that could mix two surfaces using a black white mask
 // never finished / started
@@ -19,11 +18,11 @@ namespace Twoface {
         maskMap;
     }
 
-    export function make(phongProperties: MeshPhongMaterialParameters, params: TwofaceParameters) {
+    export function make(phongProperties, params: TwofaceParameters) {
 
-        let customMaterial = new MeshPhongMaterial(phongProperties);
+        let customMaterial = new THREE.MeshPhongMaterial(phongProperties);
 
-        customMaterial.onBeforeCompile = function (shader: Shader) {
+        customMaterial.onBeforeCompile = function (shader) {
 
             shader.uniforms.map2 = { value: params.map2 };
             shader.uniforms.maskMap = { value: params.maskMap };
@@ -56,7 +55,7 @@ namespace Twoface {
 
                     texelColor = mix(mapColor, map2Color, 0.5);
 
-					texelColor = mapTexelToLinear( texelColor );
+					// texelColor = mapTexelToLinear( texelColor );
 
 					diffuseColor *= texelColor;
 

@@ -1,12 +1,12 @@
-import Data2 from "../Objects/Data";
+import Data2 from "../Objects/Data.js";
 
-import Ped from "./Ped";
-import Peds from "./Peds";
+import Ped from "./Ped.js";
+import Peds from "./Peds.js";
 
-import App from "../App";
-import Util from "../Random";
-import Anims from "../Sprites/Anims";
-import KILL from "../KILL";
+import Util from "../Random.js";
+import Anims from "../Sprites/Anims.js";
+import KILL from "../KILL.js";
+import App from "../App.js";
 
 export class Ply extends Ped {
 
@@ -27,16 +27,16 @@ export class Ply extends Ped {
 	manual_update() {
 		//super.Update();
 
-		const skooma = App.map[88]; // x
-
-		if (App.map[16] == 1)
+		const skooma = App.get_key(['x']); // x
+		
+		if (App.get_key(['shift']) == 1)
 			this.run = !this.run;
-
-		const A = App.map[65] && !App.map[68];
-		const S = App.map[83] && !App.map[87];
-		const W = App.map[87] && !App.map[83];
-		const D = App.map[68] && !App.map[65];
-
+		
+		const A = App.get_key(['a']) && !App.get_key(['d']);
+		const S = App.get_key(['s']) && !App.get_key(['w']);
+		const W = App.get_key(['w']) && !App.get_key(['s']);
+		const D = App.get_key(['d']) && !App.get_key(['a']);
+		
 		if (A || D) {
 			const r = this.idle ? 50 : !this.run ? 55 : 60;
 

@@ -1,21 +1,19 @@
-import Data2 from "../Data";
-import Object2 from "../Object";
+import Data2 from "../Data.js";
+import Object2 from "../Object.js";
 
-import Surfaces from "../Shapes/Surfaces";
-import Sprites from "../../Sprites/Sprites";
-import Sheets from "../../Sprites/Sheets";
+import Surfaces from "../Shapes/Surfaces.js";
+import Sprites from "../../Sprites/Sprites.js";
+import Sheets from "../../Sprites/Sheets.js";
 
-import Util from "../../Random";
-
-import { default as THREE, Mesh, Material, PlaneBufferGeometry, MeshPhongMaterial, Color, DoubleSide, Texture, Shader } from "three";
-import Points from "../Points";
-import Four from "../../Four";
+import Util from "../../Random.js";
+import Points from "../Points.js";
+import Four from "../../Four.js";
 
 export class Wall extends Object2 {
 
-    mesh: Mesh
-    material: Material
-    geometry: PlaneBufferGeometry
+    mesh
+    material
+    geometry
 
     constructor(data: Data2) {
         super(data);
@@ -50,15 +48,15 @@ export class Wall extends Object2 {
         let map = Util.loadTexture(`${style}/${sty}`);
         let maskMap = Util.loadTexture(`${style}/${mask}`);
 
-        this.material = new MeshPhongMaterial({
+        this.material = new THREE.MeshPhongMaterial({
             map: map,
             shininess: 0,
             transparent: true,
-            color: new Color(this.data.color),
+            color: new THREE.Color(this.data.color),
             //side: DoubleSide
         });
         
-        this.material.onBeforeCompile = function (shader: Shader) {
+        this.material.onBeforeCompile = function (shader) {
 
 			shader.uniforms.maskMap = { value: maskMap };
 
@@ -85,7 +83,7 @@ export class Wall extends Object2 {
                     
                     texelColor.rgb *= maskColor.r;
 
-					texelColor = mapTexelToLinear( texelColor );
+					// texelColor = mapTexelToLinear( texelColor );
 					diffuseColor *= texelColor;
 
 				#endif
@@ -93,7 +91,7 @@ export class Wall extends Object2 {
         };
 
 
-        this.mesh = new Mesh(this.geometry, this.material);
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
         this.mesh.matrixAutoUpdate = false;
         this.mesh.frustumCulled = false;
 

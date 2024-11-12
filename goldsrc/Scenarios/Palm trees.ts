@@ -1,21 +1,21 @@
-import Scenario from "./Scenario";
-import Generators from "../Generators/Generators";
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import { Scenarios } from "./Scenarios";
-import TalkingHead from "../YM/Cutscene/Talking Heads";
-import WordBox from "../YM/Cutscene/Word box";
-import Widget from "../YM/Widget";
-import Cars from "../Cars/Cars";
-import Car from "../Cars/Car";
-import Four from "../Four";
-import Points from "../Objects/Points";
-import KILL from "../KILL";
-import Cameraz from "../Unsorted/Cameraz";
-import Sprites from "../Sprites/Sprites";
-import GenTools from "../Generators/Tools";
-import City from "../Chunks/City";
-import { Shift } from "../Unsorted/Shift";
+import Scenario from "./Scenario.js";
+import Generators from "../Generators/Generators.js";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import { Scenarios } from "./Scenarios.js";
+import TalkingHead from "../YM/Cutscene/Talking Heads.js";
+import WordBox from "../YM/Cutscene/Word box.js";
+import Widget from "../YM/Widget.js";
+import Cars from "../Cars/Cars.js";
+import Car from "../Cars/Car.js";
+import Four from "../Four.js";
+import Points from "../Objects/Points.js";
+import KILL from "../KILL.js";
+import Cameraz from "../Unsorted/Cameraz.js";
+import Sprites from "../Sprites/Sprites.js";
+import GenTools from "../Generators/Tools.js";
+import City from "../Chunks/City.js";
+import { Shift } from "../Unsorted/Shift.js";
 
 export namespace PalmTrees {
 

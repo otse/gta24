@@ -1,6 +1,6 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
-import Scenario from "./Scenario";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
+import Scenario from "./Scenario.js";
 
 export namespace Scenarios {
 

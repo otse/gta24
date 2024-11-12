@@ -1,4 +1,4 @@
-import Four from "../Four";
+import Four from "../Four.js";
 
 export namespace Anims {
 

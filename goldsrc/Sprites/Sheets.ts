@@ -1,9 +1,8 @@
-import Sheet from "./Sheet";
-import { default as THREE, NearestFilter, Texture, TextureLoader, CanvasTexture, LinearFilter } from "three";
-import Four from "../Four";
-import Util from "../Random";
-import Points from "../Objects/Points";
-import KILL from "../KILL";
+import Sheet from "./Sheet.js";
+import Four from "../Four.js";
+import Util from "../Random.js";
+import Points from "../Objects/Points.js";
+import KILL from "../KILL.js";
 
 export namespace Sheets {
 
@@ -65,7 +64,7 @@ export namespace Sheets {
 	var spriteTextures = [];
 
 	// Cut sprite from sheet
-	export function cut(sheet: Sheet, sprite: Square): Texture {
+	export function cut(sheet: Sheet, sprite: Square) {
 
 		// 
 		const key = `sh ${sheet} sp ${Points.string(sprite)}`;
@@ -74,14 +73,14 @@ export namespace Sheets {
 			return spriteTextures[key];
 
 		let canvasTexture =
-			new CanvasTexture(canvas);
+			new THREE.CanvasTexture(canvas);
 
-		canvasTexture.magFilter = NearestFilter;
-		canvasTexture.minFilter = NearestFilter;
+		canvasTexture.magFilter = THREE.NearestFilter;
+		canvasTexture.minFilter = THREE.NearestFilter;
 
 		spriteTextures[key] = canvasTexture;
 
-		let callback = (texture: Texture) => {
+		let callback = (texture) => {
 
 			const context = canvas.getContext("2d");
 
@@ -100,17 +99,17 @@ export namespace Sheets {
 		}
 
 		// optimize re-loading here
-		let fakeTexture = new TextureLoader().load(sheet.file, callback, undefined, undefined);
+		let fakeTexture = new THREE.TextureLoader().load(sheet.file, callback, undefined, undefined);
 
 		return canvasTexture;
 	}
 
-	export function center(path: string): Texture {
+	export function center(path: string) {
 
 		let canvasTexture =
-			new CanvasTexture(canvas);
+			new THREE.CanvasTexture(canvas);
 
-		let callback = (texture: Texture) => {
+		let callback = (texture) => {
 
 			console.log('callback');
 
@@ -158,7 +157,7 @@ export namespace Sheets {
 			canvasTexture.needsUpdate = true;
 		}
 
-		let fakeTexture = new TextureLoader().load(path, callback, undefined, undefined);
+		let fakeTexture = new THREE.TextureLoader().load(path, callback, undefined, undefined);
 
 		return canvasTexture;
 	}

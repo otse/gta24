@@ -1,5 +1,5 @@
-import Data2 from "../Objects/Data";
-import Datas from "../Objects/Datas";
+import Data2 from "../Objects/Data.js";
+import Datas from "../Objects/Datas.js";
 
 export interface Scenario {
 	name: string;

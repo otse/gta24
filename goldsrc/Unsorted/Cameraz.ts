@@ -1,8 +1,8 @@
-import KILL from "../KILL"
-import Four from "../Four"
+import KILL from "../KILL.js"
+import Four from "../Four.js"
 
-import EasingFunctions from "./Easing"
-import App from "../App"
+import EasingFunctions from "./Easing.js"
+import App from "../App.js"
 
 // todo construct a utility type from the length of the stages array,
 // so that we can make a cool tuple for the Zoom.Set so that we dont
@@ -39,7 +39,7 @@ namespace Cameraz {
 
 	export function update() {
 
-		const z = App.map[90] == 1;
+		const z = App.get_key(['z']) == 1;
 
 		if (z && allowManual) {
 			dontZoom = false;

@@ -1,6 +1,6 @@
-import Four from "./Four";
 
-import KILL from "./KILL";
+import KILL from "./KILL.js";
+import Four from "./Four.js";
 
 //import { default as THREE } from 'three';
 //export { THREE };
@@ -15,6 +15,7 @@ export const enum KEY {
 
 export namespace App {
 
+	const id = Math.random();
 	export var map = {};
 	export var wheel = 0;
 
@@ -23,9 +24,7 @@ export namespace App {
 	export var left = false;
 
 	function onkeys(event) {
-		const key = event.keyCode;
-
-		//console.log(event);
+		const key = event.key.toLowerCase();
 
 		if ('keydown' == event.type)
 			map[key] = (undefined == map[key])
@@ -38,7 +37,15 @@ export namespace App {
 		if (key == 114) // F3
 			event.preventDefault();
 
+		console.log('onkey for app', id, 'key', key);
+		
 		return;
+	}
+
+	export function get_key(number: [string]) {
+		console.log('get key for id', id);
+		
+		return map[number[0]];
 	}
 
 	function onwheel(event) {
@@ -92,6 +99,8 @@ export namespace App {
 
 		requestAnimationFrame(loop);
 
+		//console.log('woo');
+
 		Four.update();
 
 		wheel = 0;
@@ -99,7 +108,5 @@ export namespace App {
 		delay();
 	}
 }
-
-window['App'] = App;
 
 export default App;
